@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaustubh Barbudhe - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <button id="lang-switch" aria-pressed="false">DE</button>
+  </nav>
+
+  <header id="home" class="section hero">
+    <h1><span class="en">Hi, I'm Kaustubh Barbudhe</span><span class="de">Hallo, ich bin Kaustubh Barbudhe</span></h1>
+    <p class="en">Analytical thinker with a passion for optimizing systems and solving complex problems.</p>
+    <p class="de">Analytischer Denker mit Leidenschaft für die Optimierung von Systemen und das Lösen komplexer Probleme.</p>
+  </header>
+
+  <section id="about" class="section">
+    <h2><span class="en">About Me</span><span class="de">Über mich</span></h2>
+    <p class="en">Experienced in programming, data modeling, and leading dynamic teams. Focused on clever, efficient solutions.</p>
+    <p class="de">Erfahren in Programmierung, Datenmodellierung und der Leitung dynamischer Teams. Immer auf clevere, effiziente Lösungen fokussiert.</p>
+  </section>
+
+  <section id="projects" class="section">
+    <h2><span class="en">Projects</span><span class="de">Projekte</span></h2>
+    <ul>
+      <li>
+        <strong>OpenLAP Visual Analytics Platform</strong>
+        <span class="en">&mdash; Angular, Java, MongoDB</span>
+        <span class="de">&mdash; Angular, Java, MongoDB</span>
+        <a href="https://github.com/im-kaustubh/idea-project" target="_blank" rel="noopener">GitHub</a>
+      </li>
+      <li>
+        <strong>Silent Spray - Stealth Game (Unity)</strong>
+        <span class="en">&mdash; Unity, C#, Git</span>
+        <span class="de">&mdash; Unity, C#, Git</span>
+        <a href="https://github.com/im-kaustubh/Silent_Spray_new" target="_blank" rel="noopener">GitHub</a>
+      </li>
+      <li>
+        <strong>NeuroCompass - Course Recommendation System</strong>
+        <span class="en">&mdash; Flask, Python</span>
+        <span class="de">&mdash; Flask, Python</span>
+        <a href="https://github.com/moharamfatema/neurocompass-website" target="_blank" rel="noopener">GitHub</a>
+      </li>
+      <li>
+        <strong>EquiPulse - Stock Trend Analysis</strong>
+        <span class="en">&mdash; Python, scikit-learn</span>
+        <span class="de">&mdash; Python, scikit-learn</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="contact" class="section">
+    <h2><span class="en">Contact</span><span class="de">Kontakt</span></h2>
+    <p>
+      <span class="en">Email</span><span class="de">E-Mail</span>:
+      <a href="mailto:kaustubhbarbudhe@gmail.com">kaustubhbarbudhe@gmail.com</a>
+    </p>
+    <p>
+      GitHub:
+      <a href="https://github.com/im-kaustubh" target="_blank" rel="noopener">im-kaustubh</a>
+    </p>
+    <p>
+      <span class="en">Website</span><span class="de">Webseite</span>:
+      <a href="https://im-kaustubh.github.io" target="_blank" rel="noopener">im-kaustubh.github.io</a>
+    </p>
+  </section>
+
+<script>
+const switchBtn = document.getElementById('lang-switch');
+let currentLang = 'en';
+
+function updateLang() {
+  document.querySelectorAll('.en').forEach(el => {
+    el.style.display = currentLang === 'en' ? 'inline' : 'none';
+  });
+  document.querySelectorAll('.de').forEach(el => {
+    el.style.display = currentLang === 'de' ? 'inline' : 'none';
+  });
+  switchBtn.textContent = currentLang === 'en' ? 'DE' : 'EN';
+}
+
+switchBtn.addEventListener('click', () => {
+  currentLang = currentLang === 'en' ? 'de' : 'en';
+  updateLang();
+});
+
+document.addEventListener('DOMContentLoaded', updateLang);
+</script>
+</body>
+</html>
