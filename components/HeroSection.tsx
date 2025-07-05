@@ -179,7 +179,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 1.0 }}
           >
             <div>
-              <div className="text-2xl font-bold text-primary">7+</div>
+              <div className="text-2xl font-bold text-primary">25+</div>
               <div className="text-sm text-text-muted">Projects</div>
             </div>
             <div>
