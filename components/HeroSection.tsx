@@ -187,7 +187,7 @@ export function HeroSection() {
               <div className="text-sm text-text-muted">Languages</div>
             </div>
             <div>
-              <div className="text-2xl font-bold text-accent">3</div>
+              <div className="text-2xl font-bold text-accent">3+</div>
               <div className="text-sm text-text-muted">Team Roles</div>
             </div>
           </motion.div>

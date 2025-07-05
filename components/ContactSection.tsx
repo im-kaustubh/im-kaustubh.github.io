@@ -43,6 +43,20 @@ export function ContactSection() {
     }
   ]
 
+  const handleContactClick = () => {
+    const subject = encodeURIComponent('Portfolio Contact - Let\'s Connect!')
+    const body = encodeURIComponent(`Hi Kaustubh,
+
+I came across your portfolio and would like to connect with you regarding:
+
+[Your message here]
+
+Best regards,
+[Your name]`)
+    
+    window.open(`mailto:kaustubhbarbudhe@gmail.com?subject=${subject}&body=${body}`, '_blank')
+  }
+
   return (
     <section className="section-padding">
       <div className="container-custom">
@@ -83,79 +97,30 @@ export function ContactSection() {
                 Send me a message
               </h3>
               
-              <form
-                action="https://formspree.io/f/YOUR_FORM_ID"
-                method="POST"
-                className="space-y-6"
-              >
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-text-secondary mb-2">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      className="w-full px-4 py-3 bg-surface border border-text-muted/20 rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                      placeholder="Your name"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-text-secondary mb-2">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      className="w-full px-4 py-3 bg-surface border border-text-muted/20 rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
+              <div className="space-y-6">
+                <div className="text-center p-8 bg-surface/20 rounded-xl border border-text-muted/20">
+                  <MessageSquare size={48} className="mx-auto mb-4 text-primary" />
+                  <h4 className="text-xl font-semibold mb-2 text-text-primary">
+                    Ready to Connect?
+                  </h4>
+                  <p className="text-text-secondary mb-6">
+                    Click the button below to open your email client and send me a message directly.
+                  </p>
+                  <motion.button
+                    onClick={handleContactClick}
+                    className="btn-primary flex items-center justify-center gap-2 mx-auto"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Mail size={20} />
+                    Send Email
+                  </motion.button>
                 </div>
 
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-text-secondary mb-2">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    required
-                    className="w-full px-4 py-3 bg-surface border border-text-muted/20 rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                    placeholder="What's this about?"
-                  />
+                <div className="text-center text-sm text-text-muted">
+                  <p>Or reach out directly at: <a href="mailto:kaustubhbarbudhe@gmail.com" className="text-primary hover:underline">kaustubhbarbudhe@gmail.com</a></p>
                 </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-text-secondary mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={5}
-                    className="w-full px-4 py-3 bg-surface border border-text-muted/20 rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
-                    placeholder="Tell me about your project or opportunity..."
-                  />
-                </div>
-
-                <motion.button
-                  type="submit"
-                  className="btn-primary flex items-center justify-center gap-2 w-full"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Send size={20} />
-                  Send Message
-                </motion.button>
-              </form>
+              </div>
             </motion.div>
 
             {/* Contact Info & Quick Actions */}
@@ -193,7 +158,7 @@ export function ContactSection() {
                 <h4 className="text-lg font-semibold mb-4">Quick Actions</h4>
                 
                 <motion.a
-                  href="/resume.pdf"
+                  href="/Resume_Kaustubh.pdf"
                   download
                   className="flex items-center gap-4 p-4 glass-effect rounded-xl hover:bg-surface/50 transition-colors group mb-4"
                   initial={{ opacity: 0, x: 20 }}
@@ -201,7 +166,7 @@ export function ContactSection() {
                   transition={{ duration: 0.5, delay: 1.4 }}
                   whileHover={{ scale: 1.02 }}
                 >
-                  <div className="p-3 rounded-lg bg-surface/50 group-hover:bg-surface/80 transition-colors text-primary">
+                  <div className="p-3 rounded-lg bg-surface/50 group-hover:bg-surface/80 transition-colors text-green-500">
                     <Download size={20} />
                   </div>
                   <div>
@@ -211,7 +176,7 @@ export function ContactSection() {
                 </motion.a>
 
                 <motion.a
-                  href="https://github.com/im-kaustubh"
+                  href="https://linkedin.com/in/imkaustubh"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 glass-effect rounded-xl hover:bg-surface/50 transition-colors group"
@@ -220,33 +185,17 @@ export function ContactSection() {
                   transition={{ duration: 0.5, delay: 1.5 }}
                   whileHover={{ scale: 1.02 }}
                 >
-                  <div className="p-3 rounded-lg bg-surface/50 group-hover:bg-surface/80 transition-colors text-accent">
-                    <Github size={20} />
+                  <div className="p-3 rounded-lg bg-surface/50 group-hover:bg-surface/80 transition-colors text-blue-500">
+                    <Linkedin size={20} />
                   </div>
                   <div>
-                    <div className="font-medium text-text-primary">View Projects</div>
-                    <div className="text-sm text-text-secondary">GitHub portfolio</div>
+                    <div className="font-medium text-text-primary">Connect on LinkedIn</div>
+                    <div className="text-sm text-text-secondary">Professional network</div>
                   </div>
                 </motion.a>
               </div>
             </motion.div>
           </div>
-
-          {/* Availability Status */}
-          <motion.div
-            className="mt-12 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 1.6 }}
-          >
-            <div className="inline-flex items-center gap-2 bg-green-500/10 text-green-500 px-4 py-2 rounded-full text-sm font-medium">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              Available for Software Development Opportunities
-            </div>
-            <p className="text-text-muted text-sm mt-2">
-              Currently accepting freelance projects, collaborations, and full-time opportunities
-            </p>
-          </motion.div>
         </motion.div>
       </div>
     </section>
