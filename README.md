@@ -99,13 +99,10 @@ The color scheme is defined in `tailwind.config.js`:
    ```bash
    npm run build
    ```
+   
+   *Note: With `output: 'export'` configured in `next.config.js`, the build command automatically generates static files in the `out` directory.*
 
-2. **Export static files**
-   ```bash
-   npm run export
-   ```
-
-3. **Deploy to GitHub Pages**
+2. **Deploy to GitHub Pages**
    - Push your code to GitHub
    - Go to repository Settings > Pages
    - Set source to "GitHub Actions"
@@ -145,10 +142,9 @@ The color scheme is defined in `tailwind.config.js`:
 ## 🔧 Development Scripts
 
 - `npm run dev` - Start development server
-- `npm run build` - Build for production
+- `npm run build` - Build for production (generates static files in `out` directory when using `output: 'export'`)
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
-- `npm run export` - Export static files
 
 ## 📝 Content Guidelines
 
